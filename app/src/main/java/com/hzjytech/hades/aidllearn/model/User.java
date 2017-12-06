@@ -1,48 +1,14 @@
-[1 开启多线程](#1)
+package com.hzjytech.hades.aidllearn.model;
 
-<span id="1">1 开启多线程<span>
->四大组件在AndroidManifest中指定android:process属性
-```
-<manifest
-    package="com.example.hades">
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    //私有进程，其他应用的组件不可以和他
-    <activity
-      android:name="com.example.hades.RemoteActivity"
-      android:process=":remote"
-    />
-    <activity
-      android:name="com.example.hades.Remote2Activity"
-     android:process="com.example.hades.remote2"
-    />
-</manifest>
-```
-[2 使用多线程会造成的问题](#2)
+import java.io.Serializable;
 
-<span id="2">2 使用多线程会造成的问题<span>
-1. 静态成员和单例模式完成失效
-2. 线程同步机制完全失效
-3. SharedPreferences的可靠性下降
-4. Application会多次创建
+/**
+ * Created by Hades on 2017/12/6.
+ */
 
-[3 接口](#3)
-
-<span id="3">3 接口<span>
-
-[3.1 SerialVersionUID](#31)
-
-<span id="31">3.1 SerialVersionUID<span>
-1. SerialVersionUID是用来辅助序列化和反序列化过程的，原则上序列化后的数据中的serialVersionUID最近偶皮金额当前类的
-SerialVersionUID相同才能正常地被反序列化。
-2. 序列化的时候系统会去检测文件中的serialVersionUID，看它是否和当前类的serialVersionUID一致，如果一致就说明序列化的类的版本和
-当前类的版本是相同的，这个时候可以成功的反序列化；否则就说明当前类和序列化的类相比发生了某些变化
-3. 静态成员变量属于类不属于对象，所以不会参与序列化过程，用transient关键字标记的成员变量不参与序列化过程；
-
-[3.2 Parcelable接口](#32)
-
-<span id="32">3.2 Parcelable接口<span>
-
-```User.Class
 public class User implements Parcelable,Serializable{
 
     public int userId;
@@ -123,12 +89,3 @@ public class User implements Parcelable,Serializable{
                 '}';
     }
 }
-
-```
-[3.3 Parcelable与Serializable对比](#33)
-<span id="33">3.3 Parcelable与Serailizable对比<span>
-- Parcelable主要用在内存序列化上，更适合用在Android平台上；
-- Serializable适合 __将对象序列化到存储设备中__ 或者 __将对象序列化后通过网络传输__ ；
-
-[4 Binder](#4)
-<span id="4"><span>
