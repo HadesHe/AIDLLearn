@@ -126,6 +126,7 @@ public class User implements Parcelable,Serializable{
 
 ```
 [3.3 Parcelable与Serializable对比](#33)
+
 <span id="33">3.3 Parcelable与Serailizable对比<span>
 - Parcelable主要用在内存序列化上，更适合用在Android平台上；
 - Serializable适合 __将对象序列化到存储设备中__ 或者 __将对象序列化后通过网络传输__ ；
