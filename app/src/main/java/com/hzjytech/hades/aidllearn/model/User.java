@@ -3,6 +3,8 @@ package com.hzjytech.hades.aidllearn.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.hzjytech.hades.aidllearn.Book;
+
 import java.io.Serializable;
 
 /**

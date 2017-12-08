@@ -1,4 +1,4 @@
-package com.hzjytech.hades.aidllearn.model;
+package com.hzjytech.hades.aidllearn;
 
 import android.os.Parcel;
 import android.os.Parcelable;

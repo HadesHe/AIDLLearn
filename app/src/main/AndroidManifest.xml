@@ -23,10 +23,13 @@
 
         <service
             android:name=".messenger.MessengerService"
-            android:enabled="false"
-            android:exported="false"
             android:process=":remote"
-            ></service>
+            >
+            <intent-filter>
+                <action android:name="com.hzjytech.hades.aidllearn.messenger.MessengerService.launch" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
