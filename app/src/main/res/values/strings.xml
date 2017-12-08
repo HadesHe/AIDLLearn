@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AIDLLearn</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_book_manager">BookManagerActivity</string>
 </resources>

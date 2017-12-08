@@ -23,13 +23,24 @@
 
         <service
             android:name=".messenger.MessengerService"
-            android:process=":remote"
-            >
+            android:process=":remote">
             <intent-filter>
                 <action android:name="com.hzjytech.hades.aidllearn.messenger.MessengerService.launch" />
             </intent-filter>
         </service>
+        <service
+            android:name=".bookmanager.BookManagerService"
+            android:exported="false"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.hzjytech.hades.aidllearn.bookmanager.BookManagerService.launch" />
+            </intent-filter>
+        </service>
 
+        <activity
+            android:name=".bookmanager.BookManagerActivity"
+            android:label="@string/title_activity_book_manager"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

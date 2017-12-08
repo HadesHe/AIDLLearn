@@ -9,11 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.hzjytech.hades.aidllearn.bookmanager.BookManagerActivity;
 import com.hzjytech.hades.aidllearn.messenger.MessengerActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnMainMessenger;
+    private Button btnBinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         btnMainMessenger=(Button)findViewById(R.id.btnMainMessenger);
+        btnBinder=(Button)findViewById(R.id.btnBinder);
         btnMainMessenger.setOnClickListener(this);
+        btnBinder.setOnClickListener(this);
     }
 
     @Override
@@ -45,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnMainMessenger:
                 Intent intent=new Intent(MainActivity.this, MessengerActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btnBinder:
+                Intent binderIntent=new Intent(MainActivity.this, BookManagerActivity.class);
+                startActivity(binderIntent);
                 break;
         }
     }

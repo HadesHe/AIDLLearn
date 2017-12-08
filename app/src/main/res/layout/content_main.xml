@@ -16,4 +16,13 @@
         android:textAllCaps="false"
         tools:layout_editor_absoluteX="24dp"
         tools:layout_editor_absoluteY="25dp" />
+
+    <Button
+        android:id="@+id/btnBinder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Binder"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="87dp" />
 </android.support.constraint.ConstraintLayout>
