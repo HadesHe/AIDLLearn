@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hzjytech.hades.aidllearn">
+          package="com.hzjytech.hades.aidllearn">
 
     <permission android:name="com.hzjytech.hades.aidllearn.bookmanager.permission.ACCESS_BOOK_SERVICE"/>
-    <uses-permission android:name="com.hzjytech.hades.aidllearn.bookmanager.permission.ACCESS_BOOK_SERVICE"
-        />
+
+    <uses-permission android:name="com.hzjytech.hades.aidllearn.bookmanager.permission.ACCESS_BOOK_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -13,15 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".messenger.MessengerActivity" />
+        <activity android:name=".messenger.MessengerActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
@@ -29,7 +29,7 @@
             android:name=".messenger.MessengerService"
             android:process=":remote">
             <intent-filter>
-                <action android:name="com.hzjytech.hades.aidllearn.messenger.MessengerService.launch" />
+                <action android:name="com.hzjytech.hades.aidllearn.messenger.MessengerService.launch"/>
             </intent-filter>
         </service>
         <service
@@ -37,14 +37,20 @@
             android:exported="false"
             android:process=":remote">
             <intent-filter>
-                <action android:name="com.hzjytech.hades.aidllearn.bookmanager.BookManagerService.launch" />
+                <action android:name="com.hzjytech.hades.aidllearn.bookmanager.BookManagerService.launch"/>
             </intent-filter>
         </service>
 
         <activity
             android:name=".bookmanager.BookManagerActivity"
             android:label="@string/title_activity_book_manager"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <service
+            android:name=".socket.TCPServerService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>
